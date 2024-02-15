@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/Frontend/css/index.css" />
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">PRIME Financial Holdings</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="transactions.html">Transaction History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card account-details text-center">
+            <div class="card-body">
+              <p class="card-title">Account Number: 1234567890</p>
+              <h4 class="card-text">
+                Current Balance: Rs  <span id="balance">*****</span>
+              </h4>
+              <button class="btn btn-primary" onclick="showBalance()">
+                Show Balance
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <!-- Transfer Fund Card -->
+        <div class="col-md-4 my-2" onclick="navigateToTransferFund()">
+          <div class="card service-card">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Transfer Fund</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/fund.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pay E-Bills Card -->
+        <div class="col-md-4 my-2" onclick="navigateToPayBill()">
+          <div class="card service-card">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Pay E-Bill</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/pay.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generate E-Statements Card -->
+        <div class="col-md-4 my-2" onclick="generateEStatement()">
+          <div class="card service-card">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Generate E-Statement</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/bank.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 my-2" onclick="navigateToViewTranscationHistory()">
+          <div class="card service-card">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">View Transaction History</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/bank-statement.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 my-2" onclick="navigateToChangePin()">
+          <div class="card service-card">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Change PIN</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/secure.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 my-2" onclick=" navigateToUpdateProfile()">
+          <div class="card service-card">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Update My Profile</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/user-avatar.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Repeat the row for other cards -->
+      <!-- ... -->
+    </div>
+
+    <script src="/Frontend/scripts/index.js"></script>
+  </body>
+</html>

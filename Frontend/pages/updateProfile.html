@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/Frontend/css/index.css" />
+    <style>
+      /* Add your custom CSS styles here */
+      /* Initially hide the update forms */
+      .update-form {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">PRIME Financial Holdings</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="transactions.html">Transaction History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row justify-content-center mt-5">
+        <!-- Transfer Fund Card -->
+        <div class="col-md-4 my-2">
+          <div
+            class="card service-card"
+            onclick="showUpdateForm('emailUpdateForm')"
+          >
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Update Email</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/email.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pay E-Bills Card -->
+        <div class="col-md-4 my-2">
+          <div
+            class="card service-card"
+            onclick="showUpdateForm('phoneUpdateForm')"
+          >
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Update Phone Number</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/contacts.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generate E-Statements Card -->
+        <div class="col-md-4 my-2">
+          <div
+            class="card service-card"
+            onclick="showUpdateForm('addressUpdateForm')"
+          >
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Update Address</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/location-pin.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 my-2">
+          <div
+            class="card service-card"
+            onclick="showUpdateForm('occupationUpdateForm')"
+          >
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="card-body">
+                  <h5 class="card-title">Update Occupation</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  src="/Frontend/assests/businessman.png"
+                  alt="Transfer Fund"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Update Forms -->
+      <div class="row justify-content-center mt-3">
+        <!-- Update Email Form -->
+        <div class="col-md-6 update-form" id="emailUpdateForm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Update Email</h5>
+              <form>
+                <div class="form-group">
+                  <label for="newEmail">New Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="newEmail"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="updateEmail()">Update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Update Phone Number Form -->
+        <div class="col-md-6 update-form" id="phoneUpdateForm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Update Phone Number</h5>
+              <form>
+                <div class="form-group">
+                  <label for="newPhoneNumber">New Phone Number</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="newPhoneNumber"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="updatePhone()">Update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Update Address Form -->
+        <div class="col-md-6 update-form" id="addressUpdateForm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Update Address</h5>
+              <form>
+                <div class="form-group">
+                  <label for="newAddress">New Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="newAddress"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="updateAddress()">Update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Update Occupation Form -->
+        <div class="col-md-6 update-form" id="occupationUpdateForm">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Update Occupation</h5>
+              <form>
+                <div class="form-group">
+                  <label for="newOccupation">New Occupation</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="newOccupation"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="updateOccupation()">Update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/Frontend/scripts/updateProfile.js"></script>
+  </body>
+</html>
